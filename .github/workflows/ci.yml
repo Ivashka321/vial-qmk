@@ -12,29 +12,39 @@ on:
         required: true
         default: 'vial'
 
-  push:
-    paths:
-      - 'keyboards/**'
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/vial-kb/vial-qmk/vial_base:latest
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
 
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            gcc-arm-none-eabi \
+            binutils-arm-none-eabi \
+            python3 python3-pip \
+            gcc unzip wget git
+          pip3 install --user qmk
+
+      - name: Setup QMK
+        run: |
+          export PATH="$HOME/.local/bin:$PATH"
+          qmk setup --yes --home $(pwd)
+
       - name: Build firmware
         run: |
-          make ${{ github.event.inputs.keyboard || 'myboard' }}:${{ github.event.inputs.keymap || 'vial' }}
+          export PATH="$HOME/.local/bin:$PATH"
+          qmk compile -kb ${{ github.event.inputs.keyboard }} -km ${{ github.event.inputs.keymap }}
 
       - name: Upload firmware
         uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: |
-            *.uf2
-            *.hex
-            *.bin
+            **/*.uf2
+            **/*.hex
+            **/*.bin
