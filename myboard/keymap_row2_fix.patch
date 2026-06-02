@@ -1,0 +1,3 @@
+In keymap.c, row2 last two keys need to be swapped:
+col12 = Fn (MO(_FN))
+col13 = RShift (KC_RSFT)
