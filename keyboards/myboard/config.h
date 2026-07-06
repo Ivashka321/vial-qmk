@@ -3,7 +3,6 @@
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 14
 
-/* Vial */
 #define VIAL_KEYBOARD_UID {0xAB, 0xCD, 0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC}
 #define VIAL_UNLOCK_COMBO_ROWS {0, 0}
 #define VIAL_UNLOCK_COMBO_COLS {0, 1}

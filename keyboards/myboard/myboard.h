@@ -6,9 +6,6 @@
  * GP4=col0=LCtrl, GP5=col1=Win, GP6=col2=LAlt, GP7=col3=Del
  * GP9=col5=MO(Fn), GP11=col7=Space
  * GP13=col9=PrtSc, GP14=col10=RAlt, GP26=col12=Win, GP27=col13=RCtrl
- *
- *        col0  col1  col2  col3  col4  col5    col6  col7   col8  col9   col10  col11  col12  col13
- * row3:  LCtrl Win   LAlt  Del   ---   MO(Fn)  ---   Space  ---   PrtSc  RAlt   ---    Win    RCtrl
  */
 
 #define LAYOUT( \
