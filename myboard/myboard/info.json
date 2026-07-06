@@ -1,0 +1,18 @@
+{
+    "keyboard_name": "myboard",
+    "manufacturer": "Custom",
+    "url": "",
+    "maintainer": "qmk",
+    "usb": {
+        "vid": "0xFEED",
+        "pid": "0x0001",
+        "device_version": "0.0.1"
+    },
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "rows": ["GP0", "GP1", "GP2", "GP3"],
+        "cols": ["GP4", "GP5", "GP6", "GP7", "GP8", "GP9", "GP10", "GP11", "GP12", "GP13", "GP14", "GP15", "GP26", "GP27"]
+    }
+}
